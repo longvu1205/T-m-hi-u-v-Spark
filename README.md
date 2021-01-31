@@ -11,8 +11,6 @@
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Các thuộc tính chỉ định một số khoảng thời gian với một đơn vị thời gian. Các định dạng sau được Spark chấp nhận:
 
 
-<p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106387193-3ade5800-640b-11eb-8a58-2ae06da3b29b.JPG"/>
-<p align="center"> <em>Quá trình hình thành và phát triển</em> </p>
 
 #### *II. Cấu tạo của Spark*
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Nhìn chung thì cấu tạo của Apache Spark gồm có 5 thành phần chính: Spark Core, Spark Streaming, Spark SQL, MLlib và GraphX, với thành phần trung tâm của Spark là Spark Core. Spark có thể chạy trên nhiều loại Cluster Managers như Hadoop YARN, Apache Mesos hoặc trên chính cluster manager được cung cấp bởi Spark được gọi là Standalone</p>
