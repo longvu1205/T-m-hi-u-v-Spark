@@ -44,6 +44,32 @@
   
 #### *3. Giao diện người dùng Spark - Spark UI*
 <p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106388131-a7f3ec80-640f-11eb-8024-106d198c3bf3.JPG" width="50%"/>
+
+#### *4. Nén và tuần tự hóa (Compression and Serialization)*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;spark.rdd.compress - Có nén các phân vùng tuần tự</p>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;<b>Ví dụ:</b> StorageLevel.MEMORY_ONLY_SERtrong Java và Scala hoặc StorageLevel.MEMORY_ONLY trong Python). Có thể tiết kiệm không gian đáng kể với chi phí tăng thêm thời gian CPU. Nén sẽ sử dụng tới thuộc tính spark.io.compression.codec. Ngoài ra còn có:</p>
+<ul align="justify">
+  <li><em>spark.serializer</em></li>
+  <li><em>spark.serializer.objectStreamReset</em></li>
+  <li><em>spark.kryoserializer.buffer</em></li>
+  <li><em>spark.kryo.registrator</em></li>
+  <li><em>spark.kryo.referenceTracking, ...</em></li>
+</ul>
+
+### *IV. Các thuộc tính khác*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Ngoài các loại thuộc tính trên Spark còn hỗ trợ nhiều loại thuộc tính khác nhau:</p>
+<ul align="justify">
+  <li><em>Môi trường thực thi (Runtime Environment)</em></li>
+  <li><em>Quản lý bộ nhớ (Memory Management)</em></li>
+  <li><em>Hành vi thực thi (Execution Behavior)</em></li>
+  <li><em>Chỉ số thực thi (Executor Metrics)</em></li>
+  <li><em>Kết nối mạng (Networking)</em></li>
+  <li><em>Lập lịch (Scheduling)</em></li>
+  <li><em>Chế độ thực thi rào cản (Barrier Execution Mode)</em></li>
+  <li><em>Phân bố động (Dynamic Allocation)</em></li>
+  <li><em>Cấu hình Thread (Thread Configurations)</em></li>
+  <li><em>Bảo mật (Security)</em></li>
+</ul>
   
 ## Phần 3: Tài liệu tham khảo
 &nbsp;&nbsp;&nbsp;&nbsp; 1.	https://spark.apache.org/docs/latest/configuration.html
