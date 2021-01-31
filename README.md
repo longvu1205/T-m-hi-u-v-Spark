@@ -4,7 +4,35 @@
 ### *I. Đôi nét về Spark Properties*
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Thuộc tính Spark – Spark Properties kiểm soát hầu hết các cài đặt ứng dụng và được cấu hình riêng cho từng ứng dụng. Các thuộc tính này có thể được cài đặt trực tiếp trên SparkConf được chuyển đến SparkContext của bạn. SparkConf cho phép định cấu hình một số thuộc tính chung (ví dụ: URL chính và tên ứng dụng), cũng như các cặp key-value thông qua phương thức set().
 
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Apache Spark là một source cluster computing framework thực thi dữ liệu dựa trên Hadoop HDFS (nhưng không thay thế cho Hadoop) được phát triển sơ khởi vào năm 2009 bởi AMPLab tại đại học California. Sau này, Spark đã được trao cho Apache Software Foundation vào năm 2013 và được phát triển cho đến nay. Nó cho phép xây dựng các mô hình dự đoán nhanh chóng với việc tính toán được thực hiện trên một nhóm các máy tính, có có thể tính toán cùng lúc trên toàn bộ tập dữ liệu mà không cần phải trích xuất mẫu tính toán thử nghiệm. Tốc độ xử lý của Spark có được do việc tính toán được thực hiện cùng lúc trên nhiều máy khác nhau. Đồng thời việc tính toán được thực hiện ở bộ nhớ trong (in-memories) hay thực hiện hoàn toàn trên RAM. </p>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Ví dụ: Khởi tạo một ứng dụng với 2 luồng:
+
+
+val conf = new SparkConf()
+
+.setMaster("local[2]")
+
+.setAppName("CountingSheep")
+
+val sc = new SparkContext(conf)
+
+Trong đó, local[2] cho biết tối thiểu có 2 luồng đang chạy song song, giúp phát hiện lỗi chỉ tồn tại khi chạy trong bối cảnh phân tán.
+
+Các thuộc tính chỉ định một số khoảng thời gian với một đơn vị thời gian. Các định dạng sau được Spark chấp nhận:
+
+25ms (milliseconds)	3h	(hours)
+5s (seconds)	5d	(days)
+10m or 10min (minutes)	1y	(years)
+
+Các định dạng thuộc tính kích thước byte có trong Spark”
+
+1b	(bytes)	1g	or 1gb (gibibytes =
+		1024	mebibytes)
+1k	or 1kb (kibibytes = 1024	1t	or 1tb (tebibytes =
+bytes)	1024	gibibytes)
+1m	or 1mb (mebibytes = 1024	1p	or 1pb (pebibytes =
+kibibytes)	1024	tebibytes)
+ 
+ </p>
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Spark cho phép xử lý dữ liệu theo thời gian thực, vừa nhận dữ liệu từ các nguồn khác nhau đồng thời thực hiện ngay việc xử lý trên dữ liệu vừa nhận được ( Spark Streaming). Spark không có hệ thống file của riêng mình, nó sử dụng hệ thống file khác như: HDFS, Cassandra, S3,…. Spark hỗ trợ nhiều kiểu định dạng file khác nhau (text, csv, json…) đồng thời nó hoàn toàn không phụ thuộc vào bất cứ một hệ thống file nào. </p>
 
