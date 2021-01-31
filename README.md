@@ -46,14 +46,14 @@
 <p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106388131-a7f3ec80-640f-11eb-8024-106d198c3bf3.JPG" width="50%"/>
   
 ## Phần 3: Tài liệu tham khảo
-&nbsp;&nbsp;&nbsp;&nbsp; 1.	Learning Spark by Matei Zaharia, Patrick Wendell, Andy Konwinski, Holden Karau
+&nbsp;&nbsp;&nbsp;&nbsp; 1.	https://spark.apache.org/docs/latest/configuration.html
 
-&nbsp;&nbsp;&nbsp;&nbsp; 2.	https://www.tutorialspoint.com/apache_spark/apache_spark_introduction.htm
+&nbsp;&nbsp;&nbsp;&nbsp; 2.	https://docs.cloudera.com/runtime/7.2.6/running-spark-applications/topics/spark-configure-properties-spark-defaults-conf.html
 
-&nbsp;&nbsp;&nbsp;&nbsp; 3.	https://spark.apache.org/
+&nbsp;&nbsp;&nbsp;&nbsp; 3.	https://sparkbyexamples.com/pyspark-tutorial/
 
-&nbsp;&nbsp;&nbsp;&nbsp; 4.	https://www.mastercode.vn/blog/web-development/apache-spark-la-gi.85
+&nbsp;&nbsp;&nbsp;&nbsp; 4.	http://itechseeker.com/tutorials/apache-spark/lap-trinh-spark-voi-scala/spark-sql-dataset-va-dataframes/
 
-&nbsp;&nbsp;&nbsp;&nbsp; 5.	http://itechseeker.com/
+&nbsp;&nbsp;&nbsp;&nbsp; 5.	https://dzone.com/articles/pyspark-dataframe-tutorial-introduction-to-datafra
 
-&nbsp;&nbsp;&nbsp;&nbsp; 6. Jeffrey Dean, Sanjay Ghemawat. Mapreduce : Simplified Data Processing on Large Clusters. In OSDI, 2004
+&nbsp;&nbsp;&nbsp;&nbsp; 6.	https://www.tutorialspoint.com/pyspark/pyspark_rdd.htm
