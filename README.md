@@ -77,7 +77,7 @@
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Bên cạnh đó, RDD còn được hiểu là cấu trúc dữ liệu nền tảng của Spark, được sử dụng để phát triển Spark từ khi dự án này mới được ra đời. Resilient ở đây có thể hiểu là khả năng khôi phục dữ liệu khi dữ liệu xảy ra lỗi hoặc bị mất dữ liệu trong quá trình sử dụng. Distributed có nghĩa là các phần tử và các đối tượng (objects) trong Spark là không thể thay đổi (immutable) và được phân tán ra nhiều nodes khác nhau trong một cluster. Chính thuộc tính này của RDD cho phép Spark có thể thực hiện các thuật toán và tiến hành xử lý một cách song song, qua đó giúp tăng tốc độ và hiệu suất của hệ thống.</p>
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;RDDs có thể chứa bất kỳ kiểu dữ liệu nào của Python, Java, hoặc đối tượng Scala, bao gồm các kiểu dữ liệu do người dùng định nghĩa. Thông thường, RDD chỉ cho phép đọc, phân mục tập hợp của các bản ghi. RDDs có thể được tạo ra qua điều khiển xác định trên dữ liệu trong bộ nhớ hoặc RDDs, RDD là một tập hợp có khả năng chịu lỗi mỗi thành phần có thể được tính toán song song.</p>
 
-### *II. II.	Các đặc điểm của Spark RDD*
+### *II.	Các đặc điểm của Spark RDD*
 #### *1. Tính toán trong bộ nhớ*
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Spark RDD cung cấp khả năng tính toán trong bộ nhớ. Nó lưu trữ các kết quả trung gian trong bộ nhớ phân tán (RAM) thay vì lưu trữ ổn định (đĩa).</p>
 
@@ -123,8 +123,7 @@
 #### *4. Nguồn dữ liệu*
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;DataFrames có hỗ trợ cho nhiều định dạng và nguồn dữ liệu, chúng ta sẽ xem xét vấn đề này sau trong hướng dẫn Pyspark DataFrames này. Họ có thể lấy dữ liệu từ nhiều nguồn khác nhau.</p>
 
-
-### *III.	Các tính năng của DataFrame và nguồn dữ liệu PySpark *
+### *III.	Các tính năng của DataFrame và nguồn dữ liệu PySpark*
 #### *1. Các tính năng*
 <p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106389070-04590b00-6414-11eb-8f54-35b0267ed50d.jpg"width="50%"/>
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;DataFrame được phân phối trong tự nhiên, làm cho nó trở thành một cấu trúc dữ liệu có khả năng chịu lỗi và có tính khả dụng cao.</p>
