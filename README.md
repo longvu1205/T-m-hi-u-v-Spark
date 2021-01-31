@@ -5,7 +5,7 @@
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Thuộc tính Spark – Spark Properties kiểm soát hầu hết các cài đặt ứng dụng và được cấu hình riêng cho từng ứng dụng. Các thuộc tính này có thể được cài đặt trực tiếp trên SparkConf được chuyển đến SparkContext của bạn. SparkConf cho phép định cấu hình một số thuộc tính chung (ví dụ: URL chính và tên ứng dụng), cũng như các cặp key-value thông qua phương thức set().
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; <b>Ví dụ:</b> Khởi tạo một ứng dụng với 2 luồng:
-<p align="center"> <img src ="https://user-images.githubusercontent.com/77878466/105628034-fe3fb900-5e6c-11eb-91d4-637f6b2b5845.png"/>
+<p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106387193-3ade5800-640b-11eb-8a58-2ae06da3b29b.JPG"/>
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Trong đó, local[2] cho biết tối thiểu có 2 luồng đang chạy song song, giúp phát hiện lỗi chỉ tồn tại khi chạy trong bối cảnh phân tán.
  </p>
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Các thuộc tính chỉ định một số khoảng thời gian với một đơn vị thời gian. Các định dạng sau được Spark chấp nhận:
