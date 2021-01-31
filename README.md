@@ -2,11 +2,11 @@
 
 ## Phần 1: Tìm hiểu về Spark Properties
 ### *I. Đôi nét về Spark Properties*
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Thuộc tính Spark – Spark Properties kiểm soát hầu hết các cài đặt ứng dụng và được cấu hình riêng cho từng ứng dụng. Các thuộc tính này có thể được cài đặt trực tiếp trên SparkConf được chuyển đến SparkContext của bạn. SparkConf cho phép định cấu hình một số thuộc tính chung (ví dụ: URL chính và tên ứng dụng), cũng như các cặp key-value thông qua phương thức set().
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Thuộc tính Spark – Spark Properties kiểm soát hầu hết các cài đặt ứng dụng và được cấu hình riêng cho từng ứng dụng. Các thuộc tính này có thể được cài đặt trực tiếp trên SparkConf được chuyển đến SparkContext của bạn. SparkConf cho phép định cấu hình một số thuộc tính chung (<i><u>ví dụ:</u></i> URL chính và tên ứng dụng), cũng như các cặp key-value thông qua phương thức set().
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; <b>Ví dụ:</b> Khởi tạo một ứng dụng với 2 luồng:
 <p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106387193-3ade5800-640b-11eb-8a58-2ae06da3b29b.JPG"width="50%"/>
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Trong đó, local[2] cho biết tối thiểu có 2 luồng đang chạy song song, giúp phát hiện lỗi chỉ tồn tại khi chạy trong bối cảnh phân tán.
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Trong đó, <i>local[2]</i> cho biết tối thiểu có 2 luồng đang chạy song song, giúp phát hiện lỗi chỉ tồn tại khi chạy trong bối cảnh phân tán.
 </p>
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Các thuộc tính chỉ định một số khoảng thời gian với một đơn vị thời gian. Các định dạng sau được Spark chấp nhận:
 <p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106387420-2d759d80-640c-11eb-8a57-3fb4b1855699.JPG"width="50%"/>
@@ -17,13 +17,13 @@
 ### *II. Tải động với Spark Properties (Dynamically loading Spark Properties)*
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Trong một sô trường hợp, ta có thể tránh việc thiết lập cứng cho các cấu hình mặc định trong một SparkConf.
 </p>
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;<b>Ví dụ:</b>Nếu muốn chạy cùng một ứng dụng với các bản gốc khác nhau hoặc số lượng bộ nhớ khác nhau thì chỉ cần dùng SparkConf() mà Spark cung cấp, cho phép tạo một SparkConf trống.
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;<b>Ví dụ:</b>Nếu muốn chạy cùng một ứng dụng với các bản gốc khác nhau hoặc số lượng bộ nhớ khác nhau thì chỉ cần dùng <i>SparkConf()</i> mà Spark cung cấp, cho phép tạo một SparkConf trống.
 </p>
 <p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106387576-ef2cae00-640c-11eb-8eaa-a207dbab3291.JPG" width="50%"/>
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Sau đó, chỉ việc cung cấp các giá trị cấu hình trong lúc chạy Spark:
 </p>
 <p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106387567-eb992700-640c-11eb-8f11-e9a7aea9ab6d.JPG" width="50%"/>
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Trong đó, công <i>spark-submit</i> cụ và trình bao Spark hỗ trợ hai cách để tải cấu hình động. Đầu tiên là các tùy chọn dòng lệnh, chẳng hạn như <i>--master</i>, như được hiển thị ở trên. spark-submit có thể chấp nhận bất kỳ thuộc tính Spark nào bằng cách sử dụng <i>--conf/-c</i> cờ, nhưng sử dụng cờ đặc biệt cho các thuộc tính đóng một vai trò trong việc khởi chạy ứng dụng Spark. Đang chạy ./bin/spark-submit –help sẽ hiển thị toàn bộ danh sách các tùy chọn này.
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Trong đó, công <i>spark-submit</i> cụ và trình bao Spark hỗ trợ hai cách để tải cấu hình động. Đầu tiên là các tùy chọn dòng lệnh, chẳng hạn như <i>--master</i>, như được hiển thị ở trên. spark-submit có thể chấp nhận bất kỳ thuộc tính Spark nào bằng cách sử dụng <i>--conf/-c</i> cờ, nhưng sử dụng cờ đặc biệt cho các thuộc tính đóng một vai trò trong việc khởi chạy ứng dụng Spark. Đang chạy <i>./bin/spark-submit –help</i> sẽ hiển thị toàn bộ danh sách các tùy chọn này.
 
 
 ### *III. Lợi ích nổi bật mà Spark mang lại*
