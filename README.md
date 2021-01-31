@@ -30,11 +30,12 @@
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Các thuộc tính của Spark chủ yếu được chia thành hai loại:
 </p>
 <ul align="justify">
-  <li><em><i>Liên quan đến triển khai:</i></em> <b>spark.driver.memory</b>, <b>spark.executor.instances</b>. Loại thuộc tính này có thể không bị ảnh hưởng khi thiết lập theo chương trình <b>SparkConf</b> trong thời gian chạy hoặc hành vi tùy thuộc vào trình quản lý cụm và chế độ triển khai đã chọn trước. Do đó nên đặt thông qua file cấu trúc hoặc tùy chọn dòng lệnh spark-submit.</li>
+  <li><em><i>Liên quan đến triển khai:</i></em> <b>spark.driver.memory</b>, <b>spark.executor.instances</b>. Loại thuộc tính này có thể không bị ảnh hưởng khi thiết lập theo chương trình <b>SparkConf</b> trong thời gian chạy hoặc hành vi tùy thuộc vào trình quản lý cụm và chế độ triển khai đã chọn trước. Do đó nên đặt thông qua file cấu trúc hoặc tùy chọn dòng lệnh <b>spark-submit</b>.</li>
   <li><em><i>Liên quan đến kiểm soát thời gian chạy Spark:</i></em><b> spark.task.maxFailures</b>.</li>
 </ul>
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Apache Spark cung cấp môt bộ giao diện người dùng trẻn website: <i>http://localhost:4040</i> (Job, Stages, Tasks, Strorage, Environment, Executors và SQL). Để có thể xem các thược tính của Spark, mọi người vào thẻ Environment. Ngoài ra, có thể xác định giá trị mặc định thông qua <i>spark-defaults.conf</i>. Các thuộc tính mặc định có sẵn trong Spark đều có giá trị mặc định hợp lý.
 </p>
+
 #### *1. Một vài thuộc tính ứng dụng - Application Properties*
 <p align="center"> <img src ="https://user-images.githubusercontent.com/74041962/106388128-a62a2900-640f-11eb-8129-f0aa20113ab6.JPG" width="50%"/>
   
