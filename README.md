@@ -70,7 +70,38 @@
   <li><em>Cấu hình Thread (Thread Configurations)</em></li>
   <li><em>Bảo mật (Security)</em></li>
 </ul>
-  
+
+## Phần 2: Tìm hiểu về Spark RDD
+### *I. Tổng quát về Resilient Distributed Datasets – RDD*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;RDD (Resilient Distributed Datasets) được định nghĩa trong Spark Core. Nó đại diện cho một collection các item đã được phân tán trên các cluster, và có thể xử lý phân tán. PySpark sử dụng PySpark RDDs và nó chỉ là 1 object của Python nên khi bạn viết code RDD transformations trên Java thực ra khi run, những transformations đó được ánh xạ lên object PythonRDD trên Java.</p>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Bên cạnh đó, RDD còn được hiểu là cấu trúc dữ liệu nền tảng của Spark, được sử dụng để phát triển Spark từ khi dự án này mới được ra đời. Resilient ở đây có thể hiểu là khả năng khôi phục dữ liệu khi dữ liệu xảy ra lỗi hoặc bị mất dữ liệu trong quá trình sử dụng. Distributed có nghĩa là các phần tử và các đối tượng (objects) trong Spark là không thể thay đổi (immutable) và được phân tán ra nhiều nodes khác nhau trong một cluster. Chính thuộc tính này của RDD cho phép Spark có thể thực hiện các thuật toán và tiến hành xử lý một cách song song, qua đó giúp tăng tốc độ và hiệu suất của hệ thống.</p>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;RDDs có thể chứa bất kỳ kiểu dữ liệu nào của Python, Java, hoặc đối tượng Scala, bao gồm các kiểu dữ liệu do người dùng định nghĩa. Thông thường, RDD chỉ cho phép đọc, phân mục tập hợp của các bản ghi. RDDs có thể được tạo ra qua điều khiển xác định trên dữ liệu trong bộ nhớ hoặc RDDs, RDD là một tập hợp có khả năng chịu lỗi mỗi thành phần có thể được tính toán song song.</p>
+
+### *II. II.	Các đặc điểm của Spark RDD*
+#### *1. Tính toán trong bộ nhớ*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Spark RDD cung cấp khả năng tính toán trong bộ nhớ. Nó lưu trữ các kết quả trung gian trong bộ nhớ phân tán (RAM) thay vì lưu trữ ổn định (đĩa).</p>
+
+#### *2. Lazy Evaluations*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Tất cả các phép biến đổi trong Apache Spark đều được gọi là lười biếng (lazy), ở chỗ chúng không tính toán ngay kết quả của chúng. Thay vào đó, nó chỉ nhớ các phép biến đổi được áp dụng cho một số tập dữ liệu cơ sở.
+</p>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Spark tính toán các phép biến đổi khi một hành động yêu cầu kết quả cho driver của chương trình.
+</p>
+
+#### *3. Khả năng chịu lỗi*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;RDD có khả năng chịu lỗi vì chúng theo dõi thông tin dòng dữ liệu để tự động xây dựng lại dữ liệu bị mất khi bị lỗi. Nó xây dựng lại dữ liệu bị mất khi lỗi bằng cách sử dụng dòng (lineage), mỗi RDD nhớ cách nó được tạo ra từ các tập dữ liệu khác (bằng các phép biến đổi như map, join hoặc GroupBy) để tạo lại chính nó.</p>
+
+#### *4. Tính bất biến*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Dữ liệu an toàn để chia sẻ trên các process. Ngoài ra, nó cũng có thể được tạo hoặc truy xuất bất cứ lúc nào giúp dễ dàng lưu vào bộ nhớ đệm, chia sẻ và nhân rộng. Vì vậy, chúng ta có thể sử dụng nó để đạt được sự thống nhất trong tính toán.</p>
+
+#### *5. Phân vùng*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Phân vùng là đơn vị cơ bản của tính song song trong Spark RDD. Mỗi phân vùng là một phân chia dữ liệu hợp lý mà có thể thay đổi được. Ta có thể tạo một phân vùng thông qua một số biến đổi trên các phân vùng hiện có</p>
+
+#### *6. Sự bền bỉ (Persistence)*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Người dùng có thể cho biết họ sẽ sử dụng lại những RDD nào và chọn hướng lưu trữ cho họ (ví dụ: lưu trữ trong bộ nhớ hoặc trên Đĩa).</p>
+#### *7. Hoạt động chi tiết thô (Coarse-grained Operations)*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Nó áp dụng cho tất cả các phần tử trong bộ dữ liệu thông qua map hoặc fiter hoặc group theo hoạt động.</p>
+#### *8. Vị trí – độ dính (Location – Stickiness)*
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;RDD có khả năng xác định ưu tiên vị trí để tính toán các phân vùng. Tùy chọn vị trí đề cập đến thông tin về vị trí của RDD. DAGScheduler đặt các phân vùng theo cách sao cho tác vụ gần với dữ liệu nhất có thể. Do đó, tốc độ tính toán có thể tăng.</p>
 ## Phần 3: Tài liệu tham khảo
 &nbsp;&nbsp;&nbsp;&nbsp; 1.	https://spark.apache.org/docs/latest/configuration.html
 
